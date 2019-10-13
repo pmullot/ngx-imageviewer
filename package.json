@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hallysonh/ngx-imageviewer"
+    "url": "https://github.com/pmullot/ngx-imageviewer"
   },
-  "homepage": "https://github.com/hallysonh/ngx-imageviewer#readme",
+  "homepage": "https://github.com/pmullot/ngx-imageviewer#readme",
   "scripts": {
     "ng": "ng",
     "start": "yarn build:lib && ng serve",
@@ -80,6 +80,7 @@
     "publish": [
       {
         "path": "@semantic-release/npm",
+        "pkgRoot2": "dist/ngx-imageviewer",
         "pkgRoot": "dist/ngx-imageviewer"
       },
       {
