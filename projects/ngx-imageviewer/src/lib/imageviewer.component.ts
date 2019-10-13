@@ -1,12 +1,12 @@
-import { Component, Input, ViewChild, AfterViewInit, Renderer2, Inject, OnDestroy } from '@angular/core';
+import { AfterViewInit, Component, Inject, Input, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
-
-import { ImageViewerConfig, IMAGEVIEWER_CONFIG, IMAGEVIEWER_CONFIG_DEFAULT, ButtonConfig, ButtonStyle } from './imageviewer.config';
-import { Viewport, Button, toSquareAngle, ResourceLoader } from './imageviewer.model';
 import { ImageResourceLoader } from './image.loader';
 import { ImageCacheService } from './imagecache.service';
+import { ImageViewerConfig, IMAGEVIEWER_CONFIG, IMAGEVIEWER_CONFIG_DEFAULT } from './imageviewer.config';
+import { Button, ResourceLoader, toSquareAngle } from './imageviewer.model';
 import { PdfResourceLoader } from './pdf.loader';
+
 
 const MIN_TOOLTIP_WIDTH_SPACE = 500;
 
@@ -63,7 +63,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
     this.resetImage();
   }
 
-  @ViewChild('imageContainer') canvasRef: any;
+  @ViewChild('imageContainer', {static: false}) canvasRef: any;
   //#endregion
 
   //#region Private properties
